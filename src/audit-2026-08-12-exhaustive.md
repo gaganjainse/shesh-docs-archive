@@ -20,7 +20,7 @@ verified: 2026-08-15
 > - **All 28 shesh-* worktrees byte-identical to their origin default
 >   branches** (verify_worktrees.py) after the day's snapshot-restore repairs.
 > - Latest CI run green on every component repo (26/26 with workflows;
->   SeshaOS/SheshAOS-kernel-archived carry none; shesha-kernel's scheduled
+>   SeshaOS/SheshAOS-kernel-archived carry none; shesh-kernel's scheduled
 >   cargo-updater run is green).
 > - SheshAOS: excised tui/gui/terminal/zig per ADR-0018; 872 tests; MIT
 >   LICENSE added; cargo-deny/machete/typos gated in CI.
@@ -39,7 +39,7 @@ Source: `docs/AUDIT_EXHAUSTIVE.json` (54 entries)
 | Category | Count | Notes |
 |----------|-------|-------|
 | **User repos total** | 41 | gaganjainse/* from API |
-| **Shesh family** | 22 | shesh-* + SheshAOS/SeshaOS/shesha-kernel/OmniRoute/shesh-omniroute/shesh-workspace |
+| **Shesh family** | 22 | shesh-* + SheshAOS/SeshaOS/shesh-kernel/OmniRoute/shesh-omniroute/shesh-workspace |
 | **Other personal** | 11 | AIM, ClinicLedger, FWRS, GameVault, Vyakrti, ePustakalay, grievance-portal, llm-eval-harness, rag-service, portfolio, ollama (fork) |
 | **Forked upstreams** | 13 | prime-agent, Memento-Skills, phone-harness, servers (modelcontextprotocol), Hermes, Hyprland-Dots, hyprdots, leon, pipecat, openWakeWord, browser-use, khoj, OmniRoute |
 | **Total unique audited** | 54 | Deduplicated by name |
@@ -62,7 +62,7 @@ shesh-voice                    True   False  False True True 41M 37ce9c2 feat: S
 shesh-workspace                True   False  False True False 679K fbb77e3 feat: add omniroute study
 SheshAOS                      True   False  True  True False 7.5M da2e15b7489396587e52e6f4a365457dc6d20b57 chore: remove last nexusaos references
 SeshaOS                        True   False  False False False 241K 8459e5d Add sesha bootstrap
-shesha-kernel                  True   False  True  True False 4.5M bedb887 Replace auto-delete with smart-sort
+shesh-kernel                  True   False  True  True False 4.5M bedb887 Replace auto-delete with smart-sort
 OmniRoute (gaganjainse)        True   False  True  True True 260M bc92c06 fix(translator)
 ...
 ```
@@ -71,7 +71,7 @@ Full JSON at `docs/AUDIT_EXHAUSTIVE.json`
 
 ## Gaps per layer (honest)
 ### Brain (governance)
-- SheshAOS 7.5M Rust 981 tests — last commit chore remove nexusaos refs — needs kernel merge with shesha-kernel ( blocked, type-diverged 57 errors, russh msg removed, zig required)
+- SheshAOS 7.5M Rust 981 tests — last commit chore remove nexusaos refs — needs kernel merge with shesh-kernel ( blocked, type-diverged 57 errors, russh msg removed, zig required)
 - shesh-audit 290K 20 tests — GuardedMCP done, Nexus bridge done, secrets multi-backend done, but needs CI release gate integration (was , now done via ci.yml audit guard sanity)
 - shesh-secrets 180K 8 tests — env/gopass/keepassxc/file backends, refuses world-readable — done
 - shesh-brain missing — packaged nexusaos-kernel for desktop —  todo, should be created from SheshAOS crates
