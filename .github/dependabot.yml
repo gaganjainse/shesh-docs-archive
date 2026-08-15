@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # An archive ships no dependencies, but its one workflow uses actions and
+  # those pins still rot. Without this the boilerplate gate reports drift and
+  # the action SHAs are never moved.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
