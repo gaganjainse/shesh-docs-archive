@@ -4,22 +4,22 @@ This directory is the single source of truth for the **Shesh** ecosystem — the
 local-first, AI-assisted desktop built on this fork of `end-4/dots-hyprland` for the MSI Sword
 16 HX B14VEKG on CachyOS 260628.
 
-**Start with [`00_INDEX.md`](00_INDEX.md).** It contains the verified hardware/software
+**Start with [`00_INDEX.md`](00-index.md).** It contains the verified hardware/software
 facts (correcting errors in earlier AI audits) and the map of every document.
 
 | Document | Purpose |
 |---|---|
-| [00_INDEX](00_INDEX.md) | Master index, verified facts, philosophy, vision |
-| [01_AUDIT](01_AUDIT.md) | Independent audit of the live repo — every issue with exact fixes |
-| [02_ROADMAP](02_ROADMAP.md) | Phased execution plan (effort, dependencies, exit criteria) |
-| [03_DISK_STRUCTURE](03_DISK_STRUCTURE.md) | On-disk layout: job vs personal vs projects, backup policy |
-| [04_DEVICE_PROFILE](04_DEVICE_PROFILE.md) | MSI Sword + CachyOS tuning: GPU/MUX, 144 Hz, power, kernel |
-| [05_SMART_ORGANIZER_V2](05_SMART_ORGANIZER_V2.md) | Real-time AI file organizer (Rust watcher + Python classifier) |
-| [06_SHESH_AGENT](06_SHESH_AGENT.md) | The voice agent: Newelle + Ollama + MCP + audit log |
-| [07_AUTOMATIONS](07_AUTOMATIONS.md) | Every autonomous job, unit, and udev rule |
-| [08_ECOSYSTEM_TOOLS](08_ECOSYSTEM_TOOLS.md) | More tools to build + what to steal from other repos + phone harness |
-| [09_AI_PROMPTS](09_AI_PROMPTS.md) | Copy-paste prompts for AI pair-programming per phase/situation |
-| [10_LICENSES_AND_SOURCES](10_LICENSES_AND_SOURCES.md) | License manifest, pinned versions, all links audited |
+| [00_INDEX](00-index.md) | Master index, verified facts, philosophy, vision |
+| [01_AUDIT](01-audit.md) | Independent audit of the live repo — every issue with exact fixes |
+| [02_ROADMAP](02-roadmap.md) | Phased execution plan (effort, dependencies, exit criteria) |
+| [03_DISK_STRUCTURE](03-disk-structure.md) | On-disk layout: job vs personal vs projects, backup policy |
+| [04_DEVICE_PROFILE](04-device-profile.md) | MSI Sword + CachyOS tuning: GPU/MUX, 144 Hz, power, kernel |
+| [05_SMART_ORGANIZER_V2](05-smart-organizer-v2.md) | Real-time AI file organizer (Rust watcher + Python classifier) |
+| [06_SHESH_AGENT](06-shesh-agent.md) | The voice agent: Newelle + Ollama + MCP + audit log |
+| [07_AUTOMATIONS](07-automations.md) | Every autonomous job, unit, and udev rule |
+| [08_ECOSYSTEM_TOOLS](08-ecosystem-tools.md) | More tools to build + what to steal from other repos + phone harness |
+| [09_AI_PROMPTS](09-ai-prompts.md) | Copy-paste prompts for AI pair-programming per phase/situation |
+| [10_LICENSES_AND_SOURCES](10-licenses-and-sources.md) | License manifest, pinned versions, all links audited |
 | [checklist](checklist.md) | Tick these as you implement |
 
 The audit and roadmap supersede the two earlier AI documents you provided (`shesh-desktop-audit.md`

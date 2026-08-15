@@ -1,0 +1,60 @@
+name: CI
+
+# An archive has no build. This job asserts that it stays an archive: that the
+# warning banner survives, that the licence is present, and that nobody starts
+# maintaining it here by adding code or a build system.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  archive:
+    name: Repository is an archive
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+        with:
+          persist-credentials: false
+
+      - name: The warning must survive
+        run: |
+          grep -q "Nothing in this repository is maintained" README.md || {
+            echo "::error::README must keep the unmaintained warning."
+            exit 1
+          }
+          grep -q "shesh-docs" README.md || {
+            echo "::error::README must point at the current documentation."
+            exit 1
+          }
+
+      - name: Licence must be present and whole
+        run: |
+          test -f LICENSE
+          lines=$(wc -l < LICENSE)
+          if [ "$lines" -lt 100 ]; then
+            echo "::error::LICENSE is a stub ($lines lines), not the GPL-3.0 text."
+            exit 1
+          fi
+
+      - name: No code or build system may appear here
+        run: |
+          found=$(find . -path ./.git -prune -o -type f \
+            \( -name '*.py' -o -name '*.rs' -o -name '*.go' -o -name '*.ts' \
+               -o -name 'Cargo.toml' -o -name 'pyproject.toml' -o -name 'package.json' \
+               -o -name 'Makefile' -o -name 'book.toml' \) -print | sort)
+          if [ -n "$found" ]; then
+            echo "::error::this is an archive; code or a build system appeared:"
+            printf '%s\n' "$found"
+            exit 1
+          fi
+          echo "Archive intact."
